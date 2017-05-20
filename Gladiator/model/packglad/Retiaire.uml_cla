@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:419c1c7a-01d3-4813-a32c-fa8c6589e0ad'
    isAbstract='false'
    isActive='false'
@@ -146,7 +146,7 @@
     isStatic='false'
     name='prendreCoup'
     concurrency='sequential'
-    visibility='private'>
+    visibility='public'>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9f7b86c3-07cf-4428-8b6b-ef75edd51046'
      isException='false'
      isOrdered='false'

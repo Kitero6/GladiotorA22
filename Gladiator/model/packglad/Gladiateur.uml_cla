@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'
    isAbstract='true'
    isActive='false'
@@ -188,7 +188,7 @@
     isStatic='false'
     name='prendreCoup'
     concurrency='sequential'
-    visibility='private'>
+    visibility='public'>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:e6b080bd-6f62-4a54-9e89-3f2dd751600f'
      isException='false'
      isOrdered='false'
@@ -303,6 +303,15 @@
     name='verifArmeDispo'
     concurrency='sequential'
     visibility='private'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:ac64c8a4-7a54-49e2-8739-a43933635f18'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='a'
+     direction='in'>
+    <type href='urn:uuid:17c5381f-8784-4eb0-8c99-2b3ec6aa0419'/>
+   </ownedParameter>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:4d506ef3-f572-4bc5-a985-5256a7d794bc'
      isException='false'
      isOrdered='false'
@@ -310,6 +319,23 @@
      isUnique='true'
      direction='return'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Boolean'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:0f7561f0-897d-446b-87a9-73227f62ad33'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getEtat'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:3f8cf19f-873a-41e2-a1a8-469c6fe9f80e'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
    </ownedParameter>
   </ownedOperation>
  </uml:Class>
