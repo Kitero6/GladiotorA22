@@ -19,7 +19,7 @@
     isUnique='true'
     name='nom'
     aggregation='none'
-    visibility='private'>
+    visibility='protected'>
    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:8005ac98-43f5-4cec-8f72-d3c09e54ea76'
      value='1'
@@ -39,7 +39,7 @@
     isUnique='true'
     name='force'
     aggregation='none'
-    visibility='private'>
+    visibility='protected'>
    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:97f1bb6b-9c9a-4bce-a248-83a6e38d3d8f'
      value='1'
@@ -59,7 +59,7 @@
     isUnique='true'
     name='vie'
     aggregation='none'
-    visibility='private'>
+    visibility='protected'>
    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:74a6aa23-4677-4de1-bb1d-24294ee56d53'
      value='1'
@@ -103,7 +103,7 @@
     isUnique='true'
     name='idg'
     aggregation='none'
-    visibility='private'>
+    visibility='protected'>
    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:6fc477aa-3afc-41e2-bf98-53cece545f12'
      value='1'

@@ -191,7 +191,22 @@
     isStatic='true'
     name='c_listeArmeDispo'
     concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:63a29d23-1ed0-409d-a45a-6a5957f7cd60'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:17c5381f-8784-4eb0-8c99-2b3ec6aa0419'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:603b54bb-4afe-4c1b-8f81-11e931d9367e'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:574544f9-8129-4370-b4cf-004bec224c2c'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:9ecc2ff1-1b3c-4b08-a961-f4213a0f669b'
     isAbstract='false'
     isLeaf='false'
@@ -227,5 +242,13 @@
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
    </ownedParameter>
   </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:d051e3e0-4da8-40c1-90d8-3f8624f6341e'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='rapport'
+    concurrency='sequential'
+    visibility='public'/>
  </uml:Class>
 </xmi:XMI>

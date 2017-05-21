@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Association xmi:type='uml:Association' xmi:uuid='urn:uuid:aa89ca3e-a261-405d-8ea7-5fd0ea005ced'
    isAbstract='false'
    isDerived='false'
@@ -43,7 +43,7 @@
     isUnique='true'
     name='armes'
     aggregation='none'
-    visibility='private'>
+    visibility='protected'>
    <association href='urn:uuid:aa89ca3e-a261-405d-8ea7-5fd0ea005ced'/>
    <type href='urn:uuid:17c5381f-8784-4eb0-8c99-2b3ec6aa0419'/>
    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:2affddb8-cbd5-4a54-a88e-7b3f3b3b01ac'

@@ -28,6 +28,10 @@ public class Arme {
         this.puissDefensive = pDef;
     }
     
+    public Integer getIda() { return this.ida; }
+    
+    public String getNom() { return this.nom; }
+    
     public Integer getPuissOffensive() { return this.puissOffensive; }
     
     public Integer getPuissDefensive() { return this.puissDefensive; }
