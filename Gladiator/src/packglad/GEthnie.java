@@ -1,7 +1,9 @@
 package packglad;
 
-import java.util.ArrayList;
 import java.util.Collection;
+
+import metier.Ethnie;
+import metier.Gladiateur;
 
 public class GEthnie {
     /**
@@ -10,32 +12,28 @@ public class GEthnie {
     private static Integer ideNext;
 
     /**
-     * @associates <{packglad.Ethnie}>
+     * @associates <{metier.Ethnie}>
      */
-    private static ArrayList<Ethnie> ethnies;
-
-    public static void ajouterGladiateur(Ethnie e, Gladiateur g) {
-        for(int i =0; i< ethnies.size(); i++){
-            if(ethnies.get(i) == e) {
-                ethnies.get(i)
-            }
-        }
-        
-    }
-
-    public static void listerEthnie() {
-    }
-
-    public static void listerGladiateur(Ethnie e) {
-    }
+    private static Collection ethnies;
 
     public static void ajouteurEthnie(String nom) {
     }
 
-    public static Ethnie chercherEthnie(Integer ide) { // Fais en sorte que la fonction retourne null si l'ethnie n'existe pas
-        return null;
+    public static Ethnie getEthnieGladiateur(Gladiateur g) {
     }
 
-    public static Ethnie getEthnieGladiateur(Gladiateur g) { return null;
+    public static Collection listerEthnie() {
+    }
+
+    public static void ajouterGladiateur(Ethnie e, Gladiateur g) {
+    }
+
+    public static Ethnie chercherEthnie(Integer ide) {
+    }
+
+    public static Collection listerGladiateur(Ethnie e) {
+    }
+
+    public static Collection vainqueurs() {
     }
 }

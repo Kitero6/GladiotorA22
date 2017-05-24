@@ -2,6 +2,8 @@ package packglad;
 
 import java.util.Collection;
 
+import metier.Arme;
+
 public class GArme {
     /**
      * @attribute
@@ -9,16 +11,16 @@ public class GArme {
     private static Integer idaNext = 1;
 
     /**
-     * @associates <{packglad.Arme}>
+     * @associates <{metier.Arme}>
      */
     private static Collection armes;
 
-    public static Arme chercherArme(Integer ida) { return null;
+    public static Arme chercherArme(Integer ida) {
     }
 
     public static void ajouterArme(String nom, Integer puissanceOff, Integer puissanceDef) {
     }
 
-    public static Collection listerArme() {  return null;
+    public static Collection listerArme() {
     }
 }
