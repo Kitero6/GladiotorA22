@@ -15,8 +15,8 @@ public class Test_Jeu1 {
         
     //Test creation et liste des Armes
         //test du getionaire
-        GArme.ajouterArme("Excalibur", 900, 0);
-        GArme.ajouterArme("Cotte_Epineuse", 0, 100);
+        GArme.ajouterArme("Excalibur", 100, 0);
+        GArme.ajouterArme("Cotte_Epineuse", 0, 60);
        GArme.ajouterArme("Ak47",666, 0);
        GArme.ajouterArme("Epee_de_l'amitier", 1, 0);
        GArme.ajouterArme("Serviette", 0, 1);
@@ -83,9 +83,30 @@ public class Test_Jeu1 {
        
        for(int i =0; i < arme_alfred.size();i++) {
            System.out.println(arme_alfred.get(i).getNom());
+           
        }
        
-        
+       fatty.receveoirArme(les_arme.get(0));
+       fatty.receveoirArme(les_arme.get(1));
+    
+       ArrayList<Arme> arme_fatty = fatty.declarerArme();
+       
+       for(int i =0; i < arme_alfred.size();i++) {
+           System.out.println(arme_fatty.get(i).getNom());           
+       }
+       
+       //Combat de Fatty vs Alfred
+       alfred.frapper(fatty, arme_alfred.get(3));
+       fatty.frapper(alfred, arme_fatty.get(0));
+       
+       //fin du combat 
+       System.out.println(fatty.rapport());
+       System.out.println(alfred.rapport());
+       
+       //Score final
+       System.out.println("Score Noobs : "+noobs.getScore());
+       System.out.println("Score Pros : "+pros.getScore());
+       
         
    }
     

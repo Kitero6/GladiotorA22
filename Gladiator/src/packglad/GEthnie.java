@@ -1,7 +1,6 @@
 package packglad;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import metier.Ethnie;
 import metier.Gladiateur;
