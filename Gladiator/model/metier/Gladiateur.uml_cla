@@ -100,6 +100,15 @@
     name='saluer'
     concurrency='sequential'
     visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:d687f14e-3c31-45e1-8810-6436c639aebb'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='nomEthnie'
+     direction='in'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
+   </ownedParameter>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:6a5c5591-d3b1-4e98-a1ef-b26e6c36211f'
      isException='false'
      isOrdered='false'
@@ -185,6 +194,15 @@
     name='rapport'
     concurrency='sequential'
     visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:24973d97-7dfe-46cd-acca-d7ab7d249320'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='nomEthnie'
+     direction='in'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
+   </ownedParameter>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9e342ea5-96dd-49bc-a9b5-bd10b58860bb'
      isException='false'
      isOrdered='false'

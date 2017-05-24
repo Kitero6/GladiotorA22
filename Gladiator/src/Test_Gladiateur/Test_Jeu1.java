@@ -72,7 +72,7 @@ public class Test_Jeu1 {
        
        //Liste tout les rapports des gladiateurs
        for(int i =0; i < les_gladiateurs.size();i++) {
-           System.out.println(les_gladiateurs.get(i).rapport());
+           System.out.println(les_gladiateurs.get(i).rapport(GEthnie.getEthnieGladiateur(GGladiateur.chercherGladiateur(i)).getNom()));
        }
        
        
@@ -100,8 +100,8 @@ public class Test_Jeu1 {
        fatty.frapper(alfred, arme_fatty.get(0));
        
        //fin du combat 
-       System.out.println(fatty.rapport());
-       System.out.println(alfred.rapport());
+       System.out.println(fatty.rapport(GEthnie.getEthnieGladiateur(GGladiateur.chercherGladiateur(fatty.getIdg())).getNom()));
+       System.out.println(alfred.rapport(GEthnie.getEthnieGladiateur(GGladiateur.chercherGladiateur(alfred.getIdg())).getNom()));
        
        //Score final
        System.out.println("Score Noobs : "+noobs.getScore());

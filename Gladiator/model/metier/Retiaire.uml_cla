@@ -241,6 +241,15 @@
     name='rapport'
     concurrency='sequential'
     visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:ab651e91-5762-4576-b76f-579b725fcc8e'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='nomEthnie'
+     direction='in'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
+   </ownedParameter>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:2db28114-ba95-4144-ab4a-dc9eb4b4a1fa'
      isException='false'
      isOrdered='false'
