@@ -1,5 +1,6 @@
 package metier;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Mirmillon extends Gladiateur {
@@ -11,42 +12,82 @@ public class Mirmillon extends Gladiateur {
     /**
      * @attribute
      */
-    private static Integer c_poidsMax;
+    private static Integer c_poidsMax = 100;
 
     /**
      * @associates <{metier.Arme}>
      */
-    private static Collection c_armeUtilisable;
+    private static ArrayList<Arme> c_armeUtilisable;
 
     /**
      * @associates <{metier.Gladiateur}>
      */
-    private Collection aggresseurs;
+    private ArrayList<Gladiateur> aggresseurs;
 
-    public Mirmillon(Integer idg, String nom, Integer poids, Integer vie) {
+    public Mirmillon(Integer idg, String nom, Integer poids) {
+        super(idg, nom);
+        if (poids > c_poidsMax) poids = c_poidsMax;
+        else if (poids < 0) poids = 0;
+        this.poids = poids;
     }
 
-    public static void c_setPoidMax(Integer poids) {
-    }
+    public Integer getForce() { return this.poids / 2; }
+    
+    public String getType() { return "Mirmillon"; }
 
+    public ArrayList<Gladiateur> getListeAgresseur() { return new ArrayList<Gladiateur>(this.aggresseurs); }
+    
+    public static void c_setPoidMax(Integer poids) { c_poidsMax = poids; }
+    
+    public static ArrayList<Arme> c_listeArmeDispo() { return new ArrayList<Arme>(c_armeUtilisable); }
+    
     public static void c_autoriserArme(Arme a) {
-    }
-
-    public String getType() {
-    }
-
-    public String rapport() {
+        // On cherche si l'arme n'est pas déjà autorisée
+        boolean trouve = false;
+        int i = 0;
+        while (i < c_armeUtilisable.size() && !trouve) {
+            if (a == c_armeUtilisable.get(i)) {
+                trouve = true;
+            }                
+            i++;
+        }
+        // Et si elle ne l'est pas on l'ajoute
+        if (!trouve) c_armeUtilisable.add(a);
     }
 
     public void prendreCoup(Integer degat, Gladiateur gAgresseur) {
+        // On prend la somme de la puissance défensive
+        // en pour pouvoir la soustraire aux dégâts
+        int puissDefTotal = 0;
+        for (Arme a : this.getArmes()) {
+            puissDefTotal += a.getPuissDef();
+        }
+        // On calcul les dégâts qui vont être infligé à notre Gladiateur 
+        int degatInflige = degat - puissDefTotal;
+        if (degatInflige <  0) degatInflige = 0;
+        
+        this.setVie(this.getVie() - degatInflige);
+        if (this.getVie() < 0) this.setVie(0);
+        
+        // Vu que c'est un Mirmillon on retien l'aggresseur
+        if (!aggresseurs.contains(gAgresseur)) {
+            aggresseurs.add(gAgresseur);
+        }
     }
 
-    public static Collection c_listeArmeDispo() {
+    public String rapport() {
+        // On fait le rapport du Gladiateur de base
+        String rapport = super.rapport();
+        
+        // On rajoute les particularités du Mirmillon (poids et aggresseurs)
+        rapport += String.format("Mon poids est de %d. Et mes aggresseurs sont : ",
+                                 this.poids);
+        
+        for (Gladiateur g : aggresseurs) {
+            rapport += String.format("'%s' ", g.getNom());
+        }
+        return rapport;
     }
 
-    public Integer getForce() {
-    }
-
-    public Collection getListeAgresseur() {
-    }
+    
 }

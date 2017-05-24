@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:c75b85a9-6272-4408-af98-b3d00292d981'
    isAbstract='false'
    isActive='false'
@@ -84,15 +84,6 @@
      isStream='false'
      isUnique='true'
      name='poids'
-     direction='in'>
-    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
-   </ownedParameter>
-   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:f5e6674a-3bf3-4bd1-9fe5-6bfb01359450'
-     isException='false'
-     isOrdered='false'
-     isStream='false'
-     isUnique='true'
-     name='vie'
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
