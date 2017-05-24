@@ -18,11 +18,16 @@ public class GArme {
 
     public static Arme chercherArme(Integer ida) {
         Arme a = null;
-        for(int i =0; i< armes.size(); i++) {
+        boolean trouve = false;
+        int i =0;
+        while(i< armes.size() && !trouve) {
             if(armes.get(i).getIda()==ida) {
                 a = armes.get(i);
+                trouve = true;
             }
+            i++;
         }
+        
         return a;
     }
 

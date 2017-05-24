@@ -24,6 +24,7 @@ public class Retiaire extends Gladiateur {
     private static Collection c_armeUtilisable;
 
     public Retiaire(Integer idg, String nom, Integer agilite, Integer vie) {
+        
     }
 
     public static Collection c_listeArmeDispo() {

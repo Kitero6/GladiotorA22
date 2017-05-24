@@ -25,15 +25,25 @@ public class GEthnie {
 
     public static Ethnie getEthnieGladiateur(Gladiateur g) {
         Ethnie res = null;
+        int i =0;
+        int j =0;
+        boolean trouve = false;
         
         //On parcours la liste des ethnies. ET la liste des gladiateurs DE CHAQUE ETHNIE
-        for(int i = 0; i< ethnies.size(); i++) {
-            for(int y =0 ; y <ethnies.get(i).getListeGladiateur().size(); y++) {
-                if(ethnies.get(i).getListeGladiateur().get(y)==g) {
-                    res = ethnies.get(i);
+        while(i < ethnies.size() && !trouve) {
+            Ethnie e = ethnies.get(i);
+            ArrayList<Gladiateur>  gladiateurs = e.getListeGladiateur();
+            while(j < gladiateurs.size() && !trouve) {
+                if (gladiateurs.get(j)!=g) {
+                    res = e;
+                    trouve = true;
                 }
-            }
+                j++;
+            }  
+            i++;
         }
+        
+        
         return res;
     }
 
@@ -51,24 +61,25 @@ public class GEthnie {
 
     public static Ethnie chercherEthnie(Integer ide) {
         Ethnie res = null; //ethnie en resultat
+        int i = 0;
+        boolean  trouve = false;
+        
         //Parcours de tout les ethnies pour trouver le bon ide
-        for(int i = 0; i<ethnies.size(); i++) {
-            if(ethnies.get(i).getIde()==ide){
-                res = ethnies.get(i);
+        while(i < ethnies.size() && !trouve) {
+            Ethnie e = ethnies.get(i);
+            if(e.getIde()==ide) {
+                res = e;
+                trouve = true;
             }
+            i++;
         }
         return res;
     }
 
-    public static ArrayList<Gladiateur> listerGladiateur(Ethnie e) {
+    public static ArrayList<Gladiateur> listerGladiateur(Ethnie e) {        
         
-        //parcours la liste des ethnies pour trouver la liste des gladiateur de l'ethnie e
-        ArrayList<Gladiateur> res = new ArrayList<Gladiateur>();
-        for(int i = 0; i<ethnies.size(); i++) {
-            if(ethnies.get(i)==e){
-                res = ethnies.get(i).getListeGladiateur();
-            }
-        }
+        Ethnie p = chercherEthnie(e.getIde());
+        ArrayList<Gladiateur> res = p.getListeGladiateur();
         return res;
     }
 
