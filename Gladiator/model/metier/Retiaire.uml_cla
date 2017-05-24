@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:419c1c7a-01d3-4813-a32c-fa8c6589e0ad'
    isAbstract='false'
    isActive='false'
@@ -108,15 +108,6 @@
      isStream='false'
      isUnique='true'
      name='agilite'
-     direction='in'>
-    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
-   </ownedParameter>
-   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:4f31922c-f27a-458d-825f-12c30fb50507'
-     isException='false'
-     isOrdered='false'
-     isStream='false'
-     isUnique='true'
-     name='vie'
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>

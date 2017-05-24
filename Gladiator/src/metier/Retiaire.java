@@ -1,7 +1,6 @@
 package metier;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Retiaire extends Gladiateur {
     /**
@@ -24,16 +23,11 @@ public class Retiaire extends Gladiateur {
      */
     private static ArrayList<Arme> c_armeUtilisable;
 
-<<<<<<< HEAD
     public Retiaire(Integer idg, String nom, Integer agilite) {
         super(idg, nom);
         if (agilite > c_agiliteMax) agilite = c_agiliteMax;
         else if (agilite < 0) agilite = 0;
         this.agilite = agilite;
-=======
-    public Retiaire(Integer idg, String nom, Integer agilite, Integer vie) {
-        
->>>>>>> 4691ab2410de1e5468bce105574cd05ddb430dcc
     }
 
     public Integer getForce() { return c_forceInitiale; }
@@ -77,9 +71,10 @@ public class Retiaire extends Gladiateur {
         if (this.getVie() < 0) this.setVie(0);
     }
     
-    public String rapport() {
+    @Override
+    public String rapport(String nomEthnie) {
         // On fait le rapport du Gladiateur de base
-        String rapport = super.rapport();
+        String rapport = super.rapport(nomEthnie);
         
         // On rajoute les particularités du Mirmillon (poids et aggresseurs)
         rapport += String.format("Mon poids est de %d. Et mes aggresseurs sont : ",

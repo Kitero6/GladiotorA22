@@ -1,7 +1,6 @@
 package metier;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import packglad.GEthnie;
 
@@ -133,16 +132,16 @@ public abstract class Gladiateur {
         }
     }
     
-    public String saluer() {
+    public String saluer(String nomEthnie) {
         return String.format("Ave Caesar, %s N°%d : %s, j'appartiens à l'ethnie des %s",
                              this.getType(),
                              this.idg,
                              this.nom,
-                             GEthnie.getEthnieGladiateur(this).getNom());
+                             nomEthnie);
     }
 
-    public String rapport() {
-        String salut = this.saluer();
+    public String rapport(String nomEthnie) {
+        String salut = this.saluer(nomEthnie);
         salut += String.format(". Je suis %s (c'est a dire que j'ai %d points de vie) mes armes sont :",
                                this.getEtat(),
                                this.vie);

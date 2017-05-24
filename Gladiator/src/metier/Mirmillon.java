@@ -75,9 +75,10 @@ public class Mirmillon extends Gladiateur {
         }
     }
 
-    public String rapport() {
+    @Override
+    public String rapport(String nomEthnie) {
         // On fait le rapport du Gladiateur de base
-        String rapport = super.rapport();
+        String rapport = super.rapport(nomEthnie);
         
         // On rajoute les particularités du Mirmillon (poids et aggresseurs)
         rapport += String.format("Mon poids est de %d. Et mes aggresseurs sont : ",
