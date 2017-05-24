@@ -24,7 +24,7 @@ public class GEthnie {
     }
 
     public static Ethnie getEthnieGladiateur(Gladiateur g) {
-        Ethnie res = new Ethnie(null,null);
+        Ethnie res = null;
         
         //On parcours la liste des ethnies. ET la liste des gladiateurs DE CHAQUE ETHNIE
         for(int i = 0; i< ethnies.size(); i++) {
@@ -50,7 +50,7 @@ public class GEthnie {
     }
 
     public static Ethnie chercherEthnie(Integer ide) {
-        Ethnie res = new Ethnie(null, null); //ethnie en resultat
+        Ethnie res = null; //ethnie en resultat
         //Parcours de tout les ethnies pour trouver le bon ide
         for(int i = 0; i<ethnies.size(); i++) {
             if(ethnies.get(i).getIde()==ide){
