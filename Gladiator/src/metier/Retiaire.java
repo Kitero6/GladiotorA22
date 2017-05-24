@@ -24,11 +24,16 @@ public class Retiaire extends Gladiateur {
      */
     private static ArrayList<Arme> c_armeUtilisable;
 
+<<<<<<< HEAD
     public Retiaire(Integer idg, String nom, Integer agilite) {
         super(idg, nom);
         if (agilite > c_agiliteMax) agilite = c_agiliteMax;
         else if (agilite < 0) agilite = 0;
         this.agilite = agilite;
+=======
+    public Retiaire(Integer idg, String nom, Integer agilite, Integer vie) {
+        
+>>>>>>> 4691ab2410de1e5468bce105574cd05ddb430dcc
     }
 
     public Integer getForce() { return c_forceInitiale; }

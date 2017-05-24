@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
  <uml:Association xmi:type='uml:Association' xmi:uuid='urn:uuid:aa89ca3e-a261-405d-8ea7-5fd0ea005ced'
    isAbstract='false'
    isDerived='false'
