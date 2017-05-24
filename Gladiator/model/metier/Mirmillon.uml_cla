@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:c75b85a9-6272-4408-af98-b3d00292d981'
    isAbstract='false'
    isActive='false'
@@ -92,9 +92,9 @@
      isOrdered='false'
      isStream='false'
      isUnique='true'
-     name='e'
+     name='vie'
      direction='in'>
-    <type href='urn:uuid:31f7e137-d443-4a9d-b6e5-750198d76c73'/>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:0cc77441-14ce-4276-8b8d-e244f3f63499'
@@ -207,6 +207,55 @@
     isStatic='false'
     name='rapport'
     concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:b443ede6-28ff-4e62-a5b3-1f5c33332d02'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:1f90f987-e261-4f9f-8bce-9e8b3fbd14a6'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getForce'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:d1758fb2-a53c-4fa1-a576-791da92bc326'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:2aa3bf68-7d9e-48f6-a158-159fdc563979'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getListeAgresseur'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:847b2656-ac73-40e7-af9e-4e454f460cfd'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:71ab6254-6039-4caa-97a4-37afddd3b5ff'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:d9fd4ddf-ee74-4ccd-b03e-72775c179b0d'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
  </uml:Class>
 </xmi:XMI>

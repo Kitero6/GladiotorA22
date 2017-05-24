@@ -44,13 +44,13 @@ public abstract class Gladiateur {
     
     public abstract String getType();
     
-    // Fonction, qui ressort l'état du Gladiateur
+    // Fonction, qui ressort l'ï¿½tat du Gladiateur
     public String getEtat() {
         String etat;
         if (this.vie < 10) {
             etat = "moribond";
         } else if (this.vie <= 50) {
-            etat = "blessé";
+            etat = "blesse";
         } else {
             etat = "en forme";
         }
@@ -59,7 +59,7 @@ public abstract class Gladiateur {
     
 
     public void receveoirArme(Arme a) {
-        // Le gladiateur reçoit l'arme seuleument si il ne l'a pas déjà d'équipé
+        // Le gladiateur reï¿½oit l'arme seuleument si il ne l'a pas dï¿½jï¿½ d'ï¿½quipï¿½
         boolean trouve = false;
         int i = 0;
         while (i < armes.size() && !trouve) {
@@ -69,7 +69,7 @@ public abstract class Gladiateur {
             i++;
         }
         if (!trouve) {
-            // Si il ne l'a pas alors on vérifie qu'il est autorisé
+            // Si il ne l'a pas alors on vï¿½rifie qu'il est autorisï¿½
             // l'utiliser
             if (verifArmeDispo(a)) {
                 armes.add(a);
@@ -84,8 +84,8 @@ public abstract class Gladiateur {
     public void frapper(Gladiateur gVictime, Arme a) {
         // Le Gladiateur ne peut frapper seulement si il est encore en vie
         if (this.vie > 0) {
-            // On calcul les dégâts de base qui vont
-            // être infligé au Gladiateur gVictime
+            // On calcul les dï¿½gï¿½ts de base qui vont
+            // ï¿½tre infligï¿½ au Gladiateur gVictime
             int degat = this.force + a.getPuissOffensive();
             gVictime.prendreCoup(degat, this);
         }
@@ -93,10 +93,10 @@ public abstract class Gladiateur {
     
     public abstract void prendreCoup(Integer degat, Gladiateur gAgresseur);
 
-    // Fonction qui vérie si le gladiateur ne possède pas
-    // l'amre passée en paramètre
+    // Fonction qui vï¿½rie si le gladiateur ne possï¿½de pas
+    // l'amre passï¿½e en paramï¿½tre
     private Boolean verifArmeDispo(Arme a) {
-        // On récupère le type du Gladiateur pour
+        // On rï¿½cupï¿½re le type du Gladiateur pour
         // pouvoir savoir quelle liste d'arme dispo il faut regarder
         ArrayList<Arme> armeDispo;
         String type = this.getType();
@@ -112,7 +112,7 @@ public abstract class Gladiateur {
         }
         
         // Puis on parcourt la liste afin de savoir si
-        // le gladiateur est autorisé à l'utiliser
+        // le gladiateur est autorisï¿½ ï¿½ l'utiliser
         boolean trouve = false;
         int i = 0;
         while (i < armeDispo.size() && !trouve) {
@@ -125,7 +125,7 @@ public abstract class Gladiateur {
     }
 
     public void rapport() {
-        System.out.println(String.format("Ave Caesar, %s N°%d : %s, j'appartiens à l'ethnie des %s",
+        System.out.println(String.format("Ave Caesar, %s Nï¿½%d : %s, j'appartiens ï¿½ l'ethnie des %s",
                                          this.getType(),
                                          this.idg,
                                          this.nom,
@@ -133,12 +133,12 @@ public abstract class Gladiateur {
     }
 
     public void saluer() {
-        System.out.println(String.format("Ave César ! Je suis %s de l'éthnie %s, mon identifiant est le N°%d.",
+        System.out.println(String.format("Ave Cï¿½sar ! Je suis %s de l'ï¿½thnie %s, mon identifiant est le Nï¿½%d.",
                                          this.nom,
                                          GEthnie.getEthnieGladiateur(this),
                                          this.idg));
         this.declarerArme();
-        System.out.print(String.format("Je suis %s, c'est à dire que j'ai %d point(s) de vie(s). Ma force est de %s",
+        System.out.print(String.format("Je suis %s, c'est ï¿½ dire que j'ai %d point(s) de vie(s). Ma force est de %s",
                                        this.getEtat(),
                                        this.vie,
                                        this.force));
@@ -147,7 +147,7 @@ public abstract class Gladiateur {
     public void declarerArme() {
         System.out.print("Mes armes sont : ");
         for (Arme a : armes) {
-            System.out.print(String.format("N°%d : '%s'; ",
+            System.out.print(String.format("Nï¿½%d : '%s'; ",
                              a.getIda(),
                              a.getNom()));
         }

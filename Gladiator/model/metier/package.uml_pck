@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
  <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
- <uml:Package xmi:type='uml:Package' xmi:uuid='urn:uuid:f59df40b-7a4c-43eb-a3b9-8614e6e87c57'
+ <uml:Package xmi:type='uml:Package' xmi:uuid='urn:uuid:652ee632-edbd-489b-babd-489a01e70708'
    URI=''
-   name='packglad'
+   name='metier'
    visibility='public'/>
 </xmi:XMI>

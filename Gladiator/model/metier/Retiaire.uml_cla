@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:419c1c7a-01d3-4813-a32c-fa8c6589e0ad'
    isAbstract='false'
    isActive='false'
@@ -111,14 +111,14 @@
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
-   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:a88b3ba1-893c-4386-a5c5-703400cfeebe'
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:4f31922c-f27a-458d-825f-12c30fb50507'
      isException='false'
      isOrdered='false'
      isStream='false'
      isUnique='true'
-     name='e'
+     name='vie'
      direction='in'>
-    <type href='urn:uuid:31f7e137-d443-4a9d-b6e5-750198d76c73'/>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:51ec821a-b440-45e0-adb4-4d0802dfa65d'
@@ -249,6 +249,32 @@
     isStatic='false'
     name='rapport'
     concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:2db28114-ba95-4144-ab4a-dc9eb4b4a1fa'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:2628253d-025f-4395-ac56-0482b565a1a8'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getForce'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9d362ed8-49df-4519-96bc-bf486d07ac6d'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+  </ownedOperation>
  </uml:Class>
 </xmi:XMI>

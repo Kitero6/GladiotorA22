@@ -58,15 +58,6 @@
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
-   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:3cb134f0-1365-4aeb-a3af-e978bf59b8b3'
-     isException='false'
-     isOrdered='false'
-     isStream='false'
-     isUnique='true'
-     name='ideEthnie'
-     direction='in'>
-    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
-   </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:eaeb4d81-9288-4930-b18e-f2edbd2327e7'
     isAbstract='false'
@@ -91,15 +82,6 @@
      isStream='false'
      isUnique='true'
      name='agi'
-     direction='in'>
-    <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
-   </ownedParameter>
-   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:f63e3702-023f-451d-bab3-95d0a4c556fb'
-     isException='false'
-     isOrdered='false'
-     isStream='false'
-     isUnique='true'
-     name='ideEthnie'
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
@@ -137,7 +119,22 @@
     isStatic='true'
     name='listerGladiateur'
     concurrency='sequential'
-    visibility='public'/>
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9da1505f-7121-4bfb-8703-acbf999fcfd6'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:6a60a30e-53d6-44d2-8e70-031fc0e6c59a'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:441597e8-e672-442d-bc03-27a135aca569'
+      value='*'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:62341e67-3411-4e4b-a43c-d31fda488132'
     isAbstract='false'
     isLeaf='false'

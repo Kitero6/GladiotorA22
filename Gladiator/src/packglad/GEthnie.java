@@ -1,5 +1,6 @@
 package packglad;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class GEthnie {
@@ -11,9 +12,15 @@ public class GEthnie {
     /**
      * @associates <{packglad.Ethnie}>
      */
-    private static Collection ethnies;
+    private static ArrayList<Ethnie> ethnies;
 
     public static void ajouterGladiateur(Ethnie e, Gladiateur g) {
+        for(int i =0; i< ethnies.size(); i++){
+            if(ethnies.get(i) == e) {
+                ethnies.get(i)
+            }
+        }
+        
     }
 
     public static void listerEthnie() {
