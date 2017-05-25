@@ -37,12 +37,14 @@ public abstract class Gladiateur {
         this.armes = new ArrayList<Arme>();
     }
     
+    
     // Méthodes abstraites
     public abstract String getType();
     
     public abstract Integer getForce();
     
     public abstract void prendreCoup(Integer degat, Gladiateur gAgresseur);
+    
     
     // Méthodes get set
     public Integer getIdg() { return this.idg; }
