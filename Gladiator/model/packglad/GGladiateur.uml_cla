@@ -153,5 +153,41 @@
     <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
    </ownedParameter>
   </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:a5f70a02-c3f7-44bf-ad8c-17f5204f396e'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='true'
+    name='autoriserArmeMirmillon'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:fa20eed6-18d6-4eac-83cf-6d91ef4421f0'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='a'
+     direction='in'>
+    <type href='urn:uuid:17c5381f-8784-4eb0-8c99-2b3ec6aa0419'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:09bc7670-a72d-41fb-b03e-9eee80f24b18'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='true'
+    name='+ autoriserArmeRetiaire'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:a98d92ba-6db1-4b83-b14c-fdcc05202aee'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='a'
+     direction='in'>
+    <type href='urn:uuid:17c5381f-8784-4eb0-8c99-2b3ec6aa0419'/>
+   </ownedParameter>
+  </ownedOperation>
  </uml:Class>
 </xmi:XMI>

@@ -14,6 +14,11 @@ public class GArme {
      * @associates <{metier.Arme}>
      */
     private static ArrayList<Arme> armes;
+    
+    public GArme() {
+        armes = new ArrayList<Arme>();
+        idaNext = 1;
+    }
 
     public static Arme chercherArme(Integer ida) {
         Arme a = null;

@@ -21,7 +21,7 @@ public class Retiaire extends Gladiateur {
     /**
      * @associates <{metier.Arme}>
      */
-    private static ArrayList<Arme> c_armeUtilisable;
+    private static ArrayList<Arme> c_armeUtilisable  = new ArrayList<Arme>();
 
     public Retiaire(Integer idg, String nom, Integer agilite) {
         super(idg, nom);
@@ -77,7 +77,7 @@ public class Retiaire extends Gladiateur {
         String rapport = super.rapport(nomEthnie);
         
         // On rajoute les particularités du Mirmillon (poids et aggresseurs)
-        rapport += String.format("Mon poids est de %d. Et mes aggresseurs sont : ",
+        rapport += String.format("Mon agilite est de %d.",
                                  this.agilite);
         return rapport;
     }

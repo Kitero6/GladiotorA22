@@ -12,6 +12,9 @@ public class Test_Jeu1 {
     
     public static void main(String[] args) {
         
+        new GArme();
+        new GGladiateur();
+        new GEthnie();
         
     //Test creation et liste des Armes
         //test du getionaire
@@ -28,8 +31,7 @@ public class Test_Jeu1 {
             System.out.println(les_arme.get(i).description());
         }
         
-    //Test creation et liste Ethnie
-        
+    //Test creation et liste Ethnie        
         GEthnie.ajouteurEthnie("Trolls");
        GEthnie.ajouteurEthnie("Noobs");
        GEthnie.ajouteurEthnie("Pros");
@@ -75,10 +77,12 @@ public class Test_Jeu1 {
            System.out.println(les_gladiateurs.get(i).rapport(GEthnie.getEthnieGladiateur(GGladiateur.chercherGladiateur(i)).getNom()));
        }
        
+       // Autorisation d'armes aux Retiaires
+       GGladiateur.autoriserArmeMirmillon(GArme.chercherArme(3));
        
        //ajout d'armes
-       alfred.receveoirArme(les_arme.get(4));
-       alfred.receveoirArme(les_arme.get(3));
+       alfred.receveoirArme(GArme.chercherArme(4));
+       alfred.receveoirArme(GArme.chercherArme(3));
        ArrayList<Arme> arme_alfred = alfred.declarerArme();
        
        for(int i =0; i < arme_alfred.size();i++) {
@@ -86,22 +90,22 @@ public class Test_Jeu1 {
            
        }
        
-       fatty.receveoirArme(les_arme.get(0));
-       fatty.receveoirArme(les_arme.get(1));
+       fatty.receveoirArme(GArme.chercherArme(1));
+       fatty.receveoirArme(GArme.chercherArme(2));
     
        ArrayList<Arme> arme_fatty = fatty.declarerArme();
        
-       for(int i =0; i < arme_alfred.size();i++) {
+       for(int i = 0; i < arme_fatty.size();i++) {
            System.out.println(arme_fatty.get(i).getNom());           
        }
        
        //Combat de Fatty vs Alfred
-       alfred.frapper(fatty, arme_alfred.get(3));
-       fatty.frapper(alfred, arme_fatty.get(0));
+       alfred.frapper(fatty, GArme.chercherArme(3));
+       fatty.frapper(alfred, GArme.chercherArme(0));
        
        //fin du combat 
-       System.out.println(fatty.rapport(GEthnie.getEthnieGladiateur(GGladiateur.chercherGladiateur(fatty.getIdg())).getNom()));
-       System.out.println(alfred.rapport(GEthnie.getEthnieGladiateur(GGladiateur.chercherGladiateur(alfred.getIdg())).getNom()));
+       System.out.println(fatty.rapport(GEthnie.getEthnieGladiateur(fatty).getNom()));
+       System.out.println(alfred.rapport(GEthnie.getEthnieGladiateur(alfred).getNom()));
        
        //Score final
        System.out.println("Score Noobs : "+noobs.getScore());

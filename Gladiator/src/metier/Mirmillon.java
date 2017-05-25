@@ -17,7 +17,7 @@ public class Mirmillon extends Gladiateur {
     /**
      * @associates <{metier.Arme}>
      */
-    private static ArrayList<Arme> c_armeUtilisable;
+    private static ArrayList<Arme> c_armeUtilisable = new ArrayList<Arme>();
 
     /**
      * @associates <{metier.Gladiateur}>
@@ -29,6 +29,7 @@ public class Mirmillon extends Gladiateur {
         if (poids > c_poidsMax) poids = c_poidsMax;
         else if (poids < 0) poids = 0;
         this.poids = poids;
+        this.aggresseurs = new ArrayList<Gladiateur>();
     }
 
     public Integer getForce() { return this.poids / 2; }
@@ -81,12 +82,23 @@ public class Mirmillon extends Gladiateur {
         String rapport = super.rapport(nomEthnie);
         
         // On rajoute les particularités du Mirmillon (poids et aggresseurs)
-        rapport += String.format("Mon poids est de %d. Et mes aggresseurs sont : ",
+        rapport += String.format("Mon poids est de %d.",
                                  this.poids);
         
-        for (Gladiateur g : aggresseurs) {
-            rapport += String.format("'%s' ", g.getNom());
+        switch (aggresseurs.size()) {
+        case 0:
+            rapport += " Je n'ai toujours pas été aggressé";
+            break;
+        case 1:
+            rapport += String.format(" Mon aggresseur est : %s", aggresseurs.get(0).getNom());
+            break;
+        default:
+            rapport += " Et mes aggresseurs sont : ";
+            for (Gladiateur g : aggresseurs) {
+                rapport += String.format("'%s' ", g.getNom());
+            }
         }
+        
         return rapport;
     }
 

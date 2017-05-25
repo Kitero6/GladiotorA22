@@ -34,6 +34,7 @@ public abstract class Gladiateur {
         this.idg = idg;
         this.nom = nom;
         this.vie = c_vieInitiale;
+        this.armes = new ArrayList<Arme>();
     }
     
     // Méthodes abstraites
@@ -72,17 +73,9 @@ public abstract class Gladiateur {
 
     public void receveoirArme(Arme a) {
         // Le gladiateur reçoit l'arme seuleument si il ne l'a pas déjà d'équipé
-        boolean trouve = false;
-        int i = 0;
-        while (i < armes.size() && !trouve) {
-            if (a == armes.get(i)) {
-                trouve = true;
-            }
-            i++;
-        }
-        if (!trouve) {
+        if (!armeDansListe(armes, a)) {
             // Si il ne l'a pas alors on vérifie qu'il est autorisé
-            // l'utiliser
+            // à l'utiliser
             if (verifArmeDispo(a)) {
                 armes.add(a);
             }
@@ -111,25 +104,31 @@ public abstract class Gladiateur {
         
         // Puis on parcourt la liste afin de savoir si
         // le gladiateur est autorisé à l'utiliser
-        boolean trouve = false;
-        int i = 0;
-        while (i < armeDispo.size() && !trouve) {
-            if (armeDispo.get(i) == a) {
-                trouve = true;
-            }
-            i++;
-        }
-        return trouve;
+        return armeDansListe(armeDispo, a);
     }
 
     public void frapper(Gladiateur gVictime, Arme a) {
         // Le Gladiateur ne peut frapper seulement si il est encore en vie
-        if (this.vie > 0) {
+        // et si il possède l'arme avec laquelle on lui demande d'attaquer
+        if (this.vie > 0 && armeDansListe(armes, a)) {
             // On calcul les dégâts de base qui vont
             // être infligé au Gladiateur gVictime
             int degat = this.getForce() + a.getPuissOff();
             gVictime.prendreCoup(degat, this);
         }
+    }
+    
+    private boolean armeDansListe(ArrayList<Arme> la, Arme a) {
+        // Fonction qui recherche si une Arme a est dans une liste d'Arme la
+        boolean trouve = false;
+        int i = 0;
+        while (i < la.size() && !trouve) {
+            if (la.get(i) == a) {
+                trouve = true;
+            }
+            i++;
+        }
+        return trouve;
     }
     
     public String saluer(String nomEthnie) {
@@ -142,12 +141,26 @@ public abstract class Gladiateur {
 
     public String rapport(String nomEthnie) {
         String salut = this.saluer(nomEthnie);
-        salut += String.format(". Je suis %s (c'est a dire que j'ai %d points de vie) mes armes sont :",
+        salut += String.format(". Je suis %s (c'est a dire que j'ai %d points de vie)",
                                this.getEtat(),
                                this.vie);
-        for (Arme a : this.armes) {
-            salut +=  a.description() + '\n';
+        switch (this.armes.size()) {
+        case 0:
+            salut += " je n'ai pas d'armes.\n";
+            break;
+        case 1:
+            salut += String.format(" mon arme est : %s\n",
+                                   this.armes.get(0).getNom());
+            break;
+        default:
+            salut += " mes armes sont :\n";
+            for (Arme a : this.armes) {
+                salut +=  a.getNom() + ' ';
+            }
+            salut += "\n";
+            break;
         }
+        
         return salut;
     }
 

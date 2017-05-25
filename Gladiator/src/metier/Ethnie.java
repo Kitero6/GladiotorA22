@@ -21,6 +21,7 @@ public class Ethnie {
     public Ethnie(Integer ide, String nom) {
         this.ide = ide;
         this.nom = nom;
+        this.listeGladiateur = new ArrayList<Gladiateur>();
     }
 
     

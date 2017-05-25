@@ -15,6 +15,11 @@ public class GEthnie {
      * @associates <{metier.Ethnie}>
      */
     private static ArrayList<Ethnie> ethnies;
+    
+    public GEthnie () {
+        ethnies = new ArrayList<Ethnie>();
+        ideNext = 1;
+    }
 
     public static void ajouteurEthnie(String nom) {
         Ethnie e = new Ethnie(ideNext,nom);
