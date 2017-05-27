@@ -5,20 +5,8 @@ import java.util.ArrayList;
 import metier.Arme;
 
 public class GArme {
-    /**
-     * @attribute
-     */
     private static Integer idaNext = 1;
-
-    /**
-     * @associates <{metier.Arme}>
-     */
-    private static ArrayList<Arme> armes;
-    
-    public GArme() {
-        armes = new ArrayList<Arme>();
-        idaNext = 1;
-    }
+    private static ArrayList<Arme> armes = new ArrayList<Arme>();
 
     public static Arme chercherArme(Integer ida) {
         Arme a = null;

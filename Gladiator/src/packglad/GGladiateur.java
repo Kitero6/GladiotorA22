@@ -8,31 +8,25 @@ import metier.Retiaire;
 import metier.Arme;
 
 public class GGladiateur {
-    /**
-     * @attribute
-     */
     private static Integer idgNext = 1;
-
-    /**
-     * @associates <{metier.Gladiateur}>
-     */
-    private static ArrayList<Gladiateur> gladiateurs;
-    
-    public GGladiateur () {
-        gladiateurs = new ArrayList<Gladiateur>();
-        idgNext = 1;
-    }
+    private static ArrayList<Gladiateur> gladiateurs = new ArrayList<Gladiateur>();
 
     public static ArrayList<Gladiateur> listerGladiateur() { return new ArrayList<Gladiateur>(gladiateurs); }
 
-    public static void ajouterMirmillon(String nom, Integer poids) {
-        gladiateurs.add(new Mirmillon(idgNext, nom, poids));
+    public static Gladiateur ajouterMirmillon(String nom, Integer poids) {
+        Gladiateur g = new Mirmillon(idgNext, nom, poids);
+        gladiateurs.add(g);
         idgNext++;
+        
+        return g;
     }
     
-    public static void ajouterRetiaire(String nom, Integer agi) {
-        gladiateurs.add(new Retiaire(idgNext, nom, agi));
+    public static Gladiateur ajouterRetiaire(String nom, Integer agi) {
+        Gladiateur g = new Retiaire(idgNext, nom, agi);
+        gladiateurs.add(g);
         idgNext++;
+        
+        return g;
     }
 
     public static Gladiateur chercherGladiateur(Integer idg) {

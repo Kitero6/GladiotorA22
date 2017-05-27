@@ -5,29 +5,10 @@ import java.util.ArrayList;
 import packglad.GEthnie;
 
 public abstract class Gladiateur {
-    /**
-     * @attribute
-     */
     private Integer vie;
-
-    /**
-     * @attribute
-     */
     private static Integer c_vieInitiale = 200;
-
-    /**
-     * @attribute
-     */
     private String nom;
-
-    /**
-     * @attribute
-     */
     private Integer idg;
-
-    /**
-     * @associates <{metier.Arme}>
-     */
     private ArrayList<Arme> armes;
 
     public Gladiateur(Integer idg, String nom) {

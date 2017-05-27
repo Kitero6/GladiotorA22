@@ -4,24 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Mirmillon extends Gladiateur {
-    /**
-     * @attribute
-     */
     private Integer poids;
-
-    /**
-     * @attribute
-     */
     private static Integer c_poidsMax = 100;
-
-    /**
-     * @associates <{metier.Arme}>
-     */
     private static ArrayList<Arme> c_armeUtilisable = new ArrayList<Arme>();
-
-    /**
-     * @associates <{metier.Gladiateur}>
-     */
     private ArrayList<Gladiateur> aggresseurs;
 
     public Mirmillon(Integer idg, String nom, Integer poids) {

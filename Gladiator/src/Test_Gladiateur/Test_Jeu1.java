@@ -12,10 +12,6 @@ public class Test_Jeu1 {
     
     public static void main(String[] args) {
         
-        new GArme();
-        new GGladiateur();
-        new GEthnie();
-        
     //Test creation et liste des Armes
         //test du getionaire
         GArme.ajouterArme("Excalibur", 100, 0);
@@ -87,7 +83,6 @@ public class Test_Jeu1 {
        
        for(int i =0; i < arme_alfred.size();i++) {
            System.out.println(arme_alfred.get(i).getNom());
-           
        }
        
        fatty.receveoirArme(GArme.chercherArme(1));

@@ -6,20 +6,8 @@ import metier.Ethnie;
 import metier.Gladiateur;
 
 public class GEthnie {
-    /**
-     * @attribute
-     */
-    private static Integer ideNext;
-
-    /**
-     * @associates <{metier.Ethnie}>
-     */
-    private static ArrayList<Ethnie> ethnies;
-    
-    public GEthnie () {
-        ethnies = new ArrayList<Ethnie>();
-        ideNext = 1;
-    }
+    private static Integer ideNext = 1;
+    private static ArrayList<Ethnie> ethnies = new ArrayList<Ethnie>();
 
     public static void ajouteurEthnie(String nom) {
         Ethnie e = new Ethnie(ideNext,nom);

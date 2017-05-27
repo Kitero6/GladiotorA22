@@ -3,24 +3,9 @@ package metier;
 import java.util.ArrayList;
 
 public class Retiaire extends Gladiateur {
-    /**
-     * @attribute
-     */
     private static Integer c_forceInitiale = 30;
-
-    /**
-     * @attribute
-     */
     private static Integer c_agiliteMax = 50;
-
-    /**
-     * @attribute
-     */
     private Integer agilite;
-
-    /**
-     * @associates <{metier.Arme}>
-     */
     private static ArrayList<Arme> c_armeUtilisable  = new ArrayList<Arme>();
 
     public Retiaire(Integer idg, String nom, Integer agilite) {

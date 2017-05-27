@@ -3,19 +3,8 @@ package metier;
 import java.util.ArrayList;
 
 public class Ethnie {
-    /**
-     * @attribute
-     */
     private String nom;
-
-    /**
-     * @attribute
-     */
     private Integer ide;
-
-    /**
-     * @associates <{metier.Gladiateur}>
-     */
     private ArrayList<Gladiateur> listeGladiateur;
 
     public Ethnie(Integer ide, String nom) {
