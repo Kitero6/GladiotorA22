@@ -31,7 +31,15 @@ public class Arme {
     }
     
     public String description() {
-        //ida | nom | puissance off | puissance def"
-        return "id : "+getIda()+" | nom : "+getNom()+"| Puissance Offensive : "+getPuissOff()+"| Puissance Defensive : "+getPuissDef();
+        //ida | nom | puissance off | puissance def | dispoMir | dispoRet"
+        String desc = String.format("id : %-2d | nom : %-10s | Puissance Offensive : %-3d | Puissance Defensive : %-3d",
+                                    getIda(),
+                                    getNom(),
+                                    getPuissOff(),
+                                    getPuissDef());
+        if (Mirmillon.c_listeArmeDispo().contains(this)) desc += " | dispoMir";
+        if (Retiaire.c_listeArmeDispo().contains(this)) desc += " | dispoRet";
+        
+        return desc;
     }
 }

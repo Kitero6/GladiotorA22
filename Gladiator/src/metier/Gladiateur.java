@@ -24,8 +24,6 @@ public abstract class Gladiateur {
     
     public abstract Integer getForce();
     
-    public abstract ArrayList<Gladiateur> getListeAggresseur();
-    
     public abstract void prendreCoup(Integer degat, Gladiateur gAgresseur);
     
     
@@ -53,6 +51,11 @@ public abstract class Gladiateur {
     public Integer getVie() { return vie; }
 
     public ArrayList<Arme> getArmes() { return armes; }
+    
+    public ArrayList<Gladiateur> getListeAgresseur(){
+        //Vu qu'un Gladiateur n'a pas d'agresseur de base, on ressort une liste vide
+        return new ArrayList<Gladiateur>();
+    }
 
     public void setVie(Integer vie) { this.vie = vie; }
 
@@ -117,7 +120,7 @@ public abstract class Gladiateur {
     }
     
     public String saluer(String nomEthnie) {
-        return String.format("Ave Caesar, %s N°%d : %s, j'appartiens à l'ethnie des %s",
+        return String.format("Ave Caesar, %-9s N°%-2d : %-15s, j'appartiens à l'ethnie des %-10s",
                              this.getType(),
                              this.idg,
                              this.nom,
@@ -126,23 +129,24 @@ public abstract class Gladiateur {
 
     public String rapport(String nomEthnie) {
         String salut = this.saluer(nomEthnie);
-        salut += String.format(". Je suis %s (c'est a dire que j'ai %d points de vie)",
+        salut += String.format(". Je suis %-8s (c'est a dire que j'ai %-3d points de vie), ma force est de %-2d",
                                this.getEtat(),
-                               this.vie);
+                               this.vie,
+                               this.getForce());
         switch (this.armes.size()) {
         case 0:
-            salut += " je n'ai pas d'armes.\n";
+            salut += " je n'ai pas d'armes.";
             break;
         case 1:
-            salut += String.format(" mon arme est : %s\n",
+            salut += String.format(" mon arme est : %s.",
                                    this.armes.get(0).getNom());
             break;
         default:
-            salut += " mes armes sont :\n";
+            salut += " mes armes sont :";
             for (Arme a : this.armes) {
                 salut +=  a.getNom() + ' ';
             }
-            salut += "\n";
+            salut += ".";
             break;
         }
         
@@ -151,9 +155,5 @@ public abstract class Gladiateur {
 
     public ArrayList<Arme> declarerArme() {
         return new ArrayList<Arme>(this.armes);
-    }
-    
-    public ArrayList<Gladiateur> getListeAgresseur() {
-        return null;
     }
 }

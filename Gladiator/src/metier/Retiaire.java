@@ -62,8 +62,8 @@ public class Retiaire extends Gladiateur {
         String rapport = super.rapport(nomEthnie);
         
         // On rajoute les particularités du Mirmillon (poids et aggresseurs)
-        rapport += String.format("Mon agilite est de %d.",
+        rapport += String.format(" Mon agilite est de %d.",
                                  this.agilite);
         return rapport;
-    }
+    }    
 }

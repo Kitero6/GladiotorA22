@@ -9,27 +9,78 @@ import metier.*;
 public class Facade {
     public static Integer lancerJeu() {
         //initialise les param?tres du jeu avec les valeurs par d?faut
+        return 0;
     }
     public static void lancerJeuDEssai() {
-        //System.out.println("============ Creation des 3 ethnies ============");
-        //System.out.println("============ Creation des 6 Armes  ============");    
-        //System.out.println("============ Creation des 6 Gladiateurs  ============");
-        //System.out.println("============ Attribution des 15 armes  ============");
+        System.out.println("============ Creation des 3 ethnies ============");
+        String[] nomEthnie = { "Gaulois", "Thraces", "Dalmates" };
+        for (int i = 0; i < nomEthnie.length; i++) {
+            GEthnie.ajouteurEthnie(nomEthnie[i]);
+        }
+        
+        System.out.println("============ Creation des 6 Armes  ============");
+        int nGlaive, nTrident, nFilet, nBouclier, nCasque, nJambiere;
+        nGlaive = creerUneArme("Glaive", 80, 0);
+        autoriserArmeAuxMirmillons(nGlaive);
+        autoriserArmeAuxRetiaires(nGlaive);
+        
+        nTrident = creerUneArme("Trident", 100, 0);
+        autoriserArmeAuxRetiaires(nTrident);
+        
+        nFilet = creerUneArme("Filet", 40, 20);
+        autoriserArmeAuxRetiaires(nFilet);
+        
+        nBouclier = creerUneArme("Bouclier", 40, 40);
+        autoriserArmeAuxMirmillons(nBouclier);
+        
+        nCasque = creerUneArme("Casque", 0, 20);
+        autoriserArmeAuxMirmillons(nCasque);
+        
+        nJambiere = creerUneArme("Jambiere", 0 ,10);
+        autoriserArmeAuxMirmillons(nJambiere);
+        autoriserArmeAuxRetiaires(nJambiere);
+        
+        System.out.println("============ Creation des 6 Gladiateurs  ============");
+        int nUnix, nInformatix, nCepluplus, nPythonus, nSzervlet, nRamazmjet;
+        nUnix = creerRetiaire("Unix", 30, 1);
+        nInformatix = creerMirmillon("Informatix", 100, 1);
+        nCepluplus = creerRetiaire("Ceplusplus", 40, 2);
+        nPythonus = creerMirmillon("Pythonus", 60, 2);
+        nSzervlet = creerRetiaire("Szervlet", 50, 3);
+        nRamazmjet = creerMirmillon("Ramazmjet", 80, 3);
+        
+        System.out.println("============ Attribution des 15 armes  ============");
+        //Attributions armes Unix
+        donnerUneArme(nTrident, nUnix); donnerUneArme(nJambiere, nUnix); donnerUneArme(nFilet, nUnix);
+        //Attributions armes Informatix
+        donnerUneArme(nGlaive, nInformatix); donnerUneArme(nBouclier, nInformatix); donnerUneArme(nCasque, nInformatix); donnerUneArme(nJambiere,nInformatix);
+        //Attributions armes Ceplusplus
+        donnerUneArme(nTrident, nCepluplus); donnerUneArme(nJambiere, nCepluplus);
+        //Attributions armes Pythonus
+        donnerUneArme(nGlaive, nPythonus); donnerUneArme(nBouclier, nPythonus);
+        //Attributions armes Szervlet
+        donnerUneArme(nGlaive, nSzervlet); donnerUneArme(nJambiere, nSzervlet);
+        //Attributions armes Ramazmjet
+        donnerUneArme(nBouclier, nRamazmjet); donnerUneArme(nCasque, nRamazmjet);
     }
     public static void parametrage(Integer vieInit, Integer forceRet, Integer poidsMax, Integer agilMax) {
         //permet de modifier la valeur des param?tres du jeu
+        Gladiateur.c_setVieInitiale(vieInit);
+        Retiaire.c_setForceInitiale(forceRet);
+        Mirmillon.c_setPoidMax(poidsMax);
+        Retiaire.c_setAgiliteMax(agilMax);
     }
 
 //Les gladiateurs
     public static Integer creerRetiaire(String nom, Integer agilite, Integer ide) {
         Gladiateur g = GGladiateur.ajouterRetiaire(nom, agilite);
         GEthnie.ajouterGladiateur(GEthnie.chercherEthnie(ide), g);
-        return 0;
+        return g.getIdg();
     }
     public static Integer creerMirmillon(String nom, Integer poids, Integer ide) {
         Gladiateur g = GGladiateur.ajouterMirmillon(nom, poids);
         GEthnie.ajouterGladiateur(GEthnie.chercherEthnie(ide), g);
-        return 0;
+        return g.getIdg();
     }
     public static Collection<Integer> listerTousGladiateurs() {
         return getListeIdg(GGladiateur.listerGladiateur());
@@ -39,7 +90,7 @@ public class Facade {
         Collection<Integer> lIdg = new ArrayList<Integer>();
         Gladiateur g = GGladiateur.chercherGladiateur(idg);
         if (g.getType() == "Mirmillon") {
-            lIdg = getListeIdg(g.getListeAggresseur());
+            lIdg = getListeIdg(g.getListeAgresseur());
         }
         return lIdg;
         //  retourne la liste des idg des agresseurs du gladiateur idg (si idg est un mirmillon sinon rien)
@@ -78,13 +129,13 @@ public class Facade {
 
 // Les armes
     public static Integer creerUneArme(String nom, Integer puissOff, Integer puissDef) {
-        GArme.ajouterArme(nom, puissOff, puissDef);
-        return 0;
+        Arme a = GArme.ajouterArme(nom, puissOff, puissDef);
+        return a.getIda();
     }
     public static Integer autoriserArmeAuxMirmillons(Integer ida) {
         GGladiateur.autoriserArmeMirmillon(GArme.chercherArme(ida));
         return 0;
-;    }
+    }
     public static Integer autoriserArmeAuxRetiaires(Integer ida) {
         GGladiateur.autoriserArmeRetiaire(GArme.chercherArme(ida));
         return 0;
@@ -96,14 +147,14 @@ public class Facade {
     }
     public static Collection<Integer> listerArmesDispoMirmillon() {
         //retourne la liste des ida des armes disponibles aux mirmillons
-        return getIdaListeArme(Mirmillon.c_listeArmeDispo());
+        return getListeIda(Mirmillon.c_listeArmeDispo());
     }
     public static Collection<Integer> listerArmesDispoRetiaire() {
         //retourne la liste des ida des armes disponibles aux r?tiaires
-        return getIdaListeArme(Retiaire.c_listeArmeDispo());
+        return getListeIda(Retiaire.c_listeArmeDispo());
         
     }
-    private static Collection<Integer> getIdaListeArme(Collection<Arme> la) {
+    private static Collection<Integer> getListeIda(Collection<Arme> la) {
         // retourn la liste des ida de la collection passée en parametre
         Collection<Integer> lIda = new ArrayList<Integer>();
         for (Arme a : la) {
@@ -122,12 +173,7 @@ public class Facade {
 
 // Les ethnies 
     public static Collection<Integer> listerEthnies() {
-        Collection<Ethnie> le = GEthnie.listerEthnie();
-        Collection<Integer> lIde = new ArrayList<Integer>();
-        for (Ethnie e : le) {
-            lIde.add(e.getIde());
-        }
-        return lIde;
+        return getListeIde(GEthnie.listerEthnie());
         //retourne la liste des ide de toutes les ethnies
     }
     public static Collection<Integer> listerGladiateursDEthnie(Integer ide) {
@@ -142,6 +188,13 @@ public class Facade {
     public static Integer getScore(Integer ide) {
         return GEthnie.chercherEthnie(ide).getScore();
         //retourne le score de l'ethnie ide
+    }
+    private static Collection<Integer> getListeIde(Collection<Ethnie> le) {
+        Collection<Integer> lIde = new ArrayList<Integer>();
+        for (Ethnie e : le) {
+            lIde.add(e.getIde());
+        }
+        return lIde;
     }
  
 //combat 
@@ -162,6 +215,8 @@ public class Facade {
     }
     public static Collection<Integer> vainqueurs() {
         //renvoie le ou les ide de l'ethnie (des ethnies ex aequo) gagnante/s
+        Collection<Ethnie> vainqueurs = GEthnie.vainqueurs();
+        return getListeIde(vainqueurs);
     } 
     
 //Pour les tests unitaires

@@ -10,9 +10,18 @@ public class GEthnie {
     private static ArrayList<Ethnie> ethnies = new ArrayList<Ethnie>();
 
     public static void ajouteurEthnie(String nom) {
-        Ethnie e = new Ethnie(ideNext,nom);
-        ideNext++;
-        ethnies.add(e);
+        // On verifie qu'une Ethnie du même nom n'existe pas
+        boolean trouve = false;
+        int i = 0;
+        while (i<ethnies.size() && !trouve) {
+            if (ethnies.get(i).getNom() == nom) trouve = true;
+            i++;
+        }
+        if (!trouve) {
+            Ethnie e = new Ethnie(ideNext,nom);
+            ideNext++;
+            ethnies.add(e);
+        }
     }
 
     public static Ethnie getEthnieGladiateur(Gladiateur g) {
@@ -25,7 +34,8 @@ public class GEthnie {
         while(i < ethnies.size() && !trouve) {
             Ethnie e = ethnies.get(i);
             ArrayList<Gladiateur>  gladiateurs = e.getListeGladiateur();
-            while(j < gladiateurs.size() && !trouve) {
+            j = 0;
+            while (j < gladiateurs.size() && !trouve) {
                 if (gladiateurs.get(j).getIdg()==g.getIdg()) {
                     res = e;
                     trouve = true;

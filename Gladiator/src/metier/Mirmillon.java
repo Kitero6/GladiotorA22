@@ -21,6 +21,7 @@ public class Mirmillon extends Gladiateur {
     
     public String getType() { return "Mirmillon"; }
 
+    @Override
     public ArrayList<Gladiateur> getListeAgresseur() { return new ArrayList<Gladiateur>(this.aggresseurs); }
     
     public static void c_setPoidMax(Integer poids) { c_poidsMax = poids; }
@@ -78,7 +79,7 @@ public class Mirmillon extends Gladiateur {
             rapport += String.format(" Mon aggresseur est : %s", aggresseurs.get(0).getNom());
             break;
         default:
-            rapport += " Et mes aggresseurs sont : ";
+            rapport += " Mes aggresseurs sont : ";
             for (Gladiateur g : aggresseurs) {
                 rapport += String.format("'%s' ", g.getNom());
             }

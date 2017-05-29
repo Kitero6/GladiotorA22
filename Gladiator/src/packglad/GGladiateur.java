@@ -14,6 +14,7 @@ public class GGladiateur {
     public static ArrayList<Gladiateur> listerGladiateur() { return new ArrayList<Gladiateur>(gladiateurs); }
 
     public static Gladiateur ajouterMirmillon(String nom, Integer poids) {
+        // Deux Gladiateurs peuvent avoir le même nom du coup on ne fait pas de recherche
         Gladiateur g = new Mirmillon(idgNext, nom, poids);
         gladiateurs.add(g);
         idgNext++;
@@ -22,6 +23,7 @@ public class GGladiateur {
     }
     
     public static Gladiateur ajouterRetiaire(String nom, Integer agi) {
+        // Deux Gladiateurs peuvent avoir le même nom du coup on ne fait pas de recherche
         Gladiateur g = new Retiaire(idgNext, nom, agi);
         gladiateurs.add(g);
         idgNext++;
