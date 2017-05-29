@@ -16,7 +16,7 @@ public class GEthnie {
     }
 
     public static Ethnie getEthnieGladiateur(Gladiateur g) {
-        Ethnie res = null;
+        Ethnie res = new Ethnie(null,null);
         int i =0;
         int j =0;
         boolean trouve = false;
@@ -26,15 +26,14 @@ public class GEthnie {
             Ethnie e = ethnies.get(i);
             ArrayList<Gladiateur>  gladiateurs = e.getListeGladiateur();
             while(j < gladiateurs.size() && !trouve) {
-                if (gladiateurs.get(j)!=g) {
+                if (gladiateurs.get(j).getIdg()==g.getIdg()) {
                     res = e;
                     trouve = true;
                 }
                 j++;
             }  
             i++;
-        }
-        
+        }       
         
         return res;
     }
@@ -52,7 +51,7 @@ public class GEthnie {
     }
 
     public static Ethnie chercherEthnie(Integer ide) {
-        Ethnie res = null; //ethnie en resultat
+        Ethnie res = new Ethnie(null,null); //ethnie en resultat
         int i = 0;
         boolean  trouve = false;
         

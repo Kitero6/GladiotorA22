@@ -24,6 +24,8 @@ public abstract class Gladiateur {
     
     public abstract Integer getForce();
     
+    public abstract ArrayList<Gladiateur> getListeAggresseur();
+    
     public abstract void prendreCoup(Integer degat, Gladiateur gAgresseur);
     
     
