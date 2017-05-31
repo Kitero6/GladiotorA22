@@ -10,13 +10,16 @@ public class GArme {
 
     public static Arme ajouterArme(String nom, Integer puissanceOff, Integer puissanceDef) {
         // On verifie qu'une Arme du même nom n'existe pas
+        Arme a = null;
         boolean trouve = false;
         int i = 0;
         while (i < armes.size() && !trouve) {
-            if (armes.get(i).getNom() == nom) trouve = true;
+            if (armes.get(i).getNom() == nom) {
+                a = armes.get(i);
+                trouve = true;
+            }
             i++;
         }
-        Arme a = new Arme(null, null, null, null);
         if (!trouve) {
             a = new Arme(idaNext, nom, puissanceOff, puissanceDef);
             armes.add(a);

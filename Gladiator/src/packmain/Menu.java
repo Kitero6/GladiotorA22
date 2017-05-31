@@ -1,6 +1,8 @@
 package packmain;
 
 import java.io.Console;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import packglad.Facade;
 
@@ -20,7 +22,18 @@ public class Menu
           System.out.println();
           System.out.println("==========================================================================");
           // saisie choix
-          int choix = sc.nextInt();
+          // On met le choix à 100 si le choix est un mauvais choix, il utilisera la clause default
+          int choix = 100;
+          try
+          {
+              choix = sc.nextInt();
+          }
+          catch (InputMismatchException exception)
+          {
+              // On passe à la ligne suivante pour éviter que le programme fasse une boucle infinie
+              sc.nextLine();
+          }
+          
           int idG, idA, idE;
 
           switch (choix)
@@ -165,7 +178,19 @@ public class Menu
                   idG = sc.nextInt();
                   Facade.supprimerGlad(idG);
                   break;
-
+          
+              case 17: // ajout d'une ethnie
+                  System.out.println("Nom de l'ethnie ?");
+                  String nomEthnie = sc.next();
+                  Facade.creerEthnie(nomEthnie);
+                  break;
+          
+              case 18: // lister toutes les armes
+                  for (int ida : Facade.listerArmes()) {
+                      System.out.println(Facade.decrireArme(ida));
+                  }
+                  break;
+          
               case 98: // modifier parametres du jeu
                   System.out.println("Vie initiale ? ");
                   int vie =  sc.nextInt();
@@ -211,7 +236,11 @@ public class Menu
       System.out.println("13. Frapper (idg agresseur, idg agresse, ida arme utilisee)");
       System.out.println("14. Desarmer un gladiateur");
       System.out.println("15. (Fin de combat) : Affiche le(s) vainqueur(s) et les rapports de tous les gladiateurs");
+      System.out.println();
       System.out.println("16. Supprimer un gladiateur");
+      System.out.println("17. Ajouter une Ethnie");
+      System.out.println("18. Lister les armes");
+      System.out.println();
       System.out.println("98. Modifier parametres du jeu (vie initiale, force retiaires, poids et agilite max");
       System.out.println("99. Quitter le jeu");
       System.out.print("Choix ? (0..16 ou 98 ou 99) ");

@@ -15,7 +15,7 @@ public class Facade {
         System.out.println("============ Creation des 3 ethnies ============");
         String[] nomEthnie = { "Gaulois", "Thraces", "Dalmates" };
         for (int i = 0; i < nomEthnie.length; i++) {
-            GEthnie.ajouteurEthnie(nomEthnie[i]);
+            creerEthnie(nomEthnie[i]);
         }
         
         System.out.println("============ Creation des 6 Armes  ============");
@@ -145,6 +145,10 @@ public class Facade {
         GGladiateur.chercherGladiateur(idg).receveoirArme(GArme.chercherArme(ida));
         return 0;
     }
+    public static Collection<Integer> listerArmes() {
+        //retourne la liste des ida des armes
+        return getListeIda(GArme.listerArme());
+    }
     public static Collection<Integer> listerArmesDispoMirmillon() {
         //retourne la liste des ida des armes disponibles aux mirmillons
         return getListeIda(Mirmillon.c_listeArmeDispo());
@@ -172,6 +176,10 @@ public class Facade {
     }
 
 // Les ethnies 
+    public static void creerEthnie(String nom) {
+        Ethnie e = GEthnie.ajouteurEthnie(nom);
+        if (e == null) System.out.println("Ethnie déjà existante");
+    }
     public static Collection<Integer> listerEthnies() {
         return getListeIde(GEthnie.listerEthnie());
         //retourne la liste des ide de toutes les ethnies

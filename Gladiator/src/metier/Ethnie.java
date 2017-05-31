@@ -29,11 +29,14 @@ public class Ethnie {
         //Parcours tout les gladiateurs de l'ethnie et verifie leur etat
         int res = 0;
         for(int i =0; i<this.listeGladiateur.size(); i++) {
-            if(this.listeGladiateur.get(i).getEtat() == "en forme") {
+            switch (this.listeGladiateur.get(i).getEtat()) {
+            case "en forme":
                 res += 10;
-            }
-            else if (this.listeGladiateur.get(i).getEtat() == "blesse"){
-                res +=5;
+                break;
+            
+            case "blesse":
+                res += 5;
+                break;
             }
         }
         return res;

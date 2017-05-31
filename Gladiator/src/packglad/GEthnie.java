@@ -11,19 +11,24 @@ public class GEthnie {
 
     public static Ethnie ajouteurEthnie(String nom) {
         // On verifie qu'une Ethnie du même nom n'existe pas
+        Ethnie e = null;
         boolean trouve = false;
         int i = 0;
         while (i<ethnies.size() && !trouve) {
-            if (ethnies.get(i).getNom() == nom) trouve = true;
+            if (ethnies.get(i).getNom().equalsIgnoreCase(nom)) {
+                e = ethnies.get(i);
+                trouve = true;
+            }
+            System.out.println(String.format("Nom Ethnie : '%s'; nom à rajouter : '%s'; trouve : '%b'", ethnies.get(i).getNom(), nom, trouve));
             i++;
         }
         if (!trouve) {
-            Ethnie e = new Ethnie(ideNext,nom);
+             e = new Ethnie(ideNext,nom);
             ideNext++;
             ethnies.add(e);
             return e;
         }
-        return null;
+        return e;
     }
 
     public static Ethnie getEthnieGladiateur(Gladiateur g) {
