@@ -13,13 +13,12 @@ public class Ethnie {
         this.listeGladiateur = new ArrayList<Gladiateur>();
     }
 
+    public Integer getIde() {
+        return this.ide;
+    }
     
     public String getNom() {
         return this.nom;
-    }
-
-    public Integer getIde() {
-        return this.ide;
     }
     
     public ArrayList<Gladiateur> getListeGladiateur() {

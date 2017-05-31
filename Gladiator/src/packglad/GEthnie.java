@@ -9,7 +9,7 @@ public class GEthnie {
     private static Integer ideNext = 1;
     private static ArrayList<Ethnie> ethnies = new ArrayList<Ethnie>();
 
-    public static void ajouteurEthnie(String nom) {
+    public static Ethnie ajouteurEthnie(String nom) {
         // On verifie qu'une Ethnie du même nom n'existe pas
         boolean trouve = false;
         int i = 0;
@@ -21,7 +21,9 @@ public class GEthnie {
             Ethnie e = new Ethnie(ideNext,nom);
             ideNext++;
             ethnies.add(e);
+            return e;
         }
+        return null;
     }
 
     public static Ethnie getEthnieGladiateur(Gladiateur g) {

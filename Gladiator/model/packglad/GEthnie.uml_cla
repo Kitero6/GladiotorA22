@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:7915bbee-6b81-4c5a-bef4-89c59f64aa2c'
    isAbstract='false'
    isActive='false'
@@ -44,6 +44,14 @@
      name='nom'
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:f3154d57-d128-4745-92a1-da5024a3fa03'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:31f7e137-d443-4a9d-b6e5-750198d76c73'/>
    </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:5c432420-d675-4e4c-b378-db1f0fe6770a'

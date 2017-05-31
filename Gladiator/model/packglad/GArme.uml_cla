@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:6fa2bf92-bdd3-405a-bff0-8b954883f191'
    isAbstract='false'
    isActive='false'
@@ -66,6 +66,14 @@
      name='puissanceDef'
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:a71e6cf5-d7d2-4ace-a648-8da381537678'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:17c5381f-8784-4eb0-8c99-2b3ec6aa0419'/>
    </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:b1090d97-f933-4c94-80a7-2d462d79467a'

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.2.0'/>
  <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:31f7e137-d443-4a9d-b6e5-750198d76c73'
    isAbstract='false'
    isActive='false'
@@ -142,6 +142,29 @@
      name='g'
      direction='in'>
     <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:c3f539a1-2e3d-459b-8c49-36bd0e3f0c20'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getListeGladiateur'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:e51fc8ba-9441-48c9-b819-c009d9b9c9cf'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:3fca357f-2ef9-482a-bb6d-03b64b27e19b'
+      value='0'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:eea0cc44-23d6-4af6-a1f0-26746c825167'
+      value='*'
+      visibility='public'/>
    </ownedParameter>
   </ownedOperation>
  </uml:Class>

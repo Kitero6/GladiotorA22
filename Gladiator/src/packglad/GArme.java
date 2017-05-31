@@ -3,7 +3,6 @@ package packglad;
 import java.util.ArrayList;
 
 import metier.Arme;
-import metier.Ethnie;
 
 public class GArme {
     private static Integer idaNext = 1;

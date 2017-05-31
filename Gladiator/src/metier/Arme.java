@@ -11,7 +11,6 @@ public class Arme {
         this.nom = nom;
         this.puissOffensive = pOff;
         this.puissDefensive = pDef;
-        
     }    
 
     public String getNom() {

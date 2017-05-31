@@ -58,6 +58,14 @@
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
    </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:c5979179-05ec-4f46-bb85-d94d14c55002'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
+   </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:eaeb4d81-9288-4930-b18e-f2edbd2327e7'
     isAbstract='false'
@@ -84,6 +92,14 @@
      name='agi'
      direction='in'>
     <type href='http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:8d25a01a-35ba-45d0-b178-ae1a542517a3'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='urn:uuid:0adbac4d-a6b0-4bc8-89a0-2fafdeb20489'/>
    </ownedParameter>
   </ownedOperation>
   <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:1a047094-e677-461d-a566-729cc24ccac8'
@@ -176,7 +192,7 @@
     isLeaf='false'
     isQuery='false'
     isStatic='true'
-    name='+ autoriserArmeRetiaire'
+    name='autoriserArmeRetiaire'
     concurrency='sequential'
     visibility='public'>
    <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:a98d92ba-6db1-4b83-b14c-fdcc05202aee'
