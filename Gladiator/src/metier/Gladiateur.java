@@ -32,7 +32,14 @@ public abstract class Gladiateur {
     
     public static Integer c_getVieInitiale() { return c_vieInitiale; }
 
-    public static void c_setVieInitiale(Integer vie) { c_vieInitiale = vie; }
+    public static void c_setVieInitiale(Integer vie) { 
+        // On empêche de faire en sorte que le gladiateur soit mort de base
+        if (vie < 1) {
+            System.out.println("Vie initiale : Initialisée à 1 aulieu de " + vie);
+            c_vieInitiale = 1;
+        }
+        else c_vieInitiale = vie;
+        }
     
     public String getEtat() {
         String etat;

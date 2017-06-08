@@ -24,7 +24,14 @@ public class Mirmillon extends Gladiateur {
     @Override
     public ArrayList<Gladiateur> getListeAgresseur() { return new ArrayList<Gladiateur>(this.aggresseurs); }
     
-    public static void c_setPoidMax(Integer poids) { c_poidsMax = poids; }
+    public static void c_setPoidMax(Integer poids) {
+        // On empêche de faire en sorte que le poidsMax soit négatif
+        if (poids < 0) {
+            System.out.println("Poids initial : Initialisé à 0 aulieu de " + poids);
+            c_poidsMax = 0;
+        }
+        else c_poidsMax = poids;
+    }
     
     public static ArrayList<Arme> c_listeArmeDispo() { return new ArrayList<Arme>(c_armeUtilisable); }
     

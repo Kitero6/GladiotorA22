@@ -87,7 +87,7 @@
             <value n="allowInput" v="true"/>
             <value n="custom" v="false"/>
             <value n="name" v="Default"/>
-            <value n="targetURL"/>
+            <url n="targetURL" path="src/packmain/Menu.java"/>
          </hash>
       </hash>
    </hash>

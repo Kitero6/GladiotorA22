@@ -19,7 +19,6 @@ public class GEthnie {
                 e = ethnies.get(i);
                 trouve = true;
             }
-            System.out.println(String.format("Nom Ethnie : '%s'; nom à rajouter : '%s'; trouve : '%b'", ethnies.get(i).getNom(), nom, trouve));
             i++;
         }
         if (!trouve) {
@@ -68,7 +67,7 @@ public class GEthnie {
     }
 
     public static Ethnie chercherEthnie(Integer ide) {
-        Ethnie res = new Ethnie(null,null); //ethnie en resultat
+        Ethnie res = null; //ethnie en resultat
         int i = 0;
         boolean  trouve = false;
         

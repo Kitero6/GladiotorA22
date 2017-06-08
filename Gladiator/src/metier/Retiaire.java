@@ -19,9 +19,23 @@ public class Retiaire extends Gladiateur {
     
     public String getType() { return "Retiaire"; }
     
-    public static void c_setForceInitiale(Integer force) { c_forceInitiale = force; }
+    public static void c_setForceInitiale(Integer force) { 
+        // On empêche de mettre une forceInitiale négative
+        if (force < 0) {
+            System.out.println("Force initiale : Initialisée à 0 aulieu de " + force);
+            c_forceInitiale = 0;
+        }
+        else c_forceInitiale = force;
+    }
     
-    public static void c_setAgiliteMax(Integer agi) { c_agiliteMax = agi; }
+    public static void c_setAgiliteMax(Integer agi) { 
+        // On empêche de mettre une agilitéMax négative
+        if (agi< 0){ 
+            System.out.println("Agilite initiale : Initialisée à 0 aulieu de " + agi);
+            c_agiliteMax = 0;
+        }
+        else c_agiliteMax = agi;
+    }
     
     public static ArrayList<Arme> c_listeArmeDispo() { return new ArrayList<Arme>(c_armeUtilisable); }
     
